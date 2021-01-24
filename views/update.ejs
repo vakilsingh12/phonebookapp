@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vakil</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="update">
+        <div class="center">
+            <form action="/update" class="form3" method="POST" >
+              <input type="hidden" name="id" value="<%- edit._id %>">
+              <div>
+                <label for="">Name : </label>
+                <input type="text" name="name" value="<%- edit.name %>" required>
+              </div><br>
+              <div>
+                <label for="">Phone Number: </label>
+                <input type="text" name="phone" value="<%- edit.phone %>">
+              </div><br>
+              <div>
+                <label for="">Email Address : </label>
+                <input type="email" name="email" value="<%- edit.email %>" required>
+              </div><br>
+              <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

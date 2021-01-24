@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vakil</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <form action="/" class="form1" method="POST">
+              <div>
+                <label for="">Name : </label>
+                <input type="text" name="name" required>
+              </div><br>
+              <div>
+                <label for="">Phone Number: </label>
+                <input type="text" name="phone">
+              </div><br>
+              <div>
+                <label for="">Email Address : </label>
+                <input type="email" name="email" required>
+              </div><br>
+              <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="right">
+            <div class="search">
+                <form action="/search" method="POST" class="form2">
+                    <h4>Search By Name & Email Address </h4><br>
+                    <input type="text" name="sname" placeholder="Enter name here" required><br><br>
+                    <input type="text" name="semail" placeholder="Enter email here" required><br><br>
+                    <a href="/search"><button type="Search">Search</button></a>
+                </form>
+            </div><br>
+               <table class="table">
+                <tr class="tr">
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Update</th>
+                <th>Delete</th>
+                </tr>
+                 <% data1.forEach(function(res){ %>
+                <tr style="text-align:center">
+                <td><%- res.name %></td>
+                <td><%- res.phone %></td>
+                <td><%- res.email %></td>
+                <td><a href="/update/<%- res._id %>"><button>Update</button></a></td>
+                <td><a href="/delete/<%- res._id %>"><button>Delete</button></a></td>
+                </tr> 
+                <% }) %> 
+            </table>
+        </div>
+    </div>
+</body>
+</html>
